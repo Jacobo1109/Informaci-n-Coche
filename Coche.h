@@ -7,29 +7,33 @@
     Motor -  Motor.h
     */
 
+#ifndef COCHE_H
+#define COCHE_H
+
 #include "Motor.h"
-#include<iostream>
+#include <iostream>
 
 using namespace std;
 
 class Coche {
-    private:
-        string tipo_coche;
-        string estado_coche;
-        int generacion; //Año del coche
-        string color;
-        int puertas;
-        Motor motor;
+private:
+    string tipo_coche;
+    string estado_coche;
+    int generacion;
+    string color;
+    int puertas;
+    Motor motor;
 
-    public:
-        Coche() {
-            tipo_coche = "Desconocido";
-            estado_coche = "Desconocido";
-            generacion = 0;
-            color = "Desconocido";
-            puertas = 0;
-        }
-        Coche(string _tipo_coche, string _estado_coche, int _generacion, string _color, int _puertas, string _tipo_motor, int _cilindros, string _combustible, int _caballos, int _torque) {
+public:
+    Coche() {
+        tipo_coche = "Desconocido";
+        estado_coche = "Desconocido";
+        generacion = 0;
+        color = "Desconocido";
+        puertas = 0;
+    }
+
+    Coche(string _tipo_coche, string _estado_coche, int _generacion, string _color, int _puertas, string _tipo_motor, int _cilindros, string _combustible, int _caballos, int _torque) {
             tipo_coche = _tipo_coche;
             estado_coche = _estado_coche;
             generacion = _generacion;
@@ -74,42 +78,38 @@ class Coche {
         int get_torque() {
             return motor.get_torque();
         }
-        void set_tipo_coche(string _tipo_coche) {
-            tipo_coche = _tipo_coche;
-        }
-        void set_estado_coche(string _estado_coche) {
-            estado_coche = _estado_coche;
-        }
-        void set_generacion(int _generacion) {
-            generacion = _generacion;
-        }
-        void set_color(string _color) {
-            color = _color;
-        }
-        void set_puertas(int _puertas) {
-            puertas = _puertas;
-        }
-        void set_tipo_motor(string _tipo_motor){
-            motor.set_tipo_motor(_tipo_motor);
-        }
-        void set_cilindros(int _cilindros){
-            motor.set_cilindros(_cilindros);
-        }
-        void set_combustible(string _combustible){
-            motor.set_combustible(_combustible);
-        }
-        void set_caballos( int _caballos){
-            motor.set_caballos(_caballos);
-        }
-        void set_torque(int _torque){
-            motor.set_torque(_torque);
-        }
-        void imprime_datos() {
-            cout << "Tipo del coche: " << tipo_coche << endl;
-            cout << "Estado del coche: " << estado_coche << endl;
-            cout << "Generacion del coche: " << generacion << endl;
-            cout << "Color del coche: " << color << endl;
-            cout << "Puertas que tiene: " << puertas << endl;
-            motor.imprime_datos();
-        }
+
+    void set_tipo_coche(string _tipo_coche){ 
+        tipo_coche = _tipo_coche; 
+    }
+    void set_estado_coche(string _estado_coche){ 
+        estado_coche = _estado_coche; 
+    }
+    void set_generacion(int _generacion){
+         generacion = _generacion;
+    }
+    void set_color(string _color){
+        color = _color;
+    }
+    void set_puertas(int _puertas){
+        puertas = _puertas;
+    }
+    void set_motor(Motor _motor){
+        motor = _motor;
+    }
+
+    void imprime_datos() {
+        cout << "Tipo del coche: " << tipo_coche << endl;
+        cout << "Estado del coche: " << estado_coche << endl;
+        cout << "Generacion: " << generacion << endl;
+        cout << "Color: " << color << endl;
+        cout << "Numero de puertas: " << puertas << endl;
+        cout << "----------------------" << endl;
+        motor.imprime_datos();
+
+    }
+
+    virtual ~Coche(){}
 };
+
+#endif
