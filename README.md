@@ -21,7 +21,8 @@ Esta clase proporcionará la información sobre el motor.
 # Coche_main
 Esto es la parte main donde se implementarán todas las clases para desplegar los usuarios.
 
-![image](https://github.com/user-attachments/assets/fc31ef9d-1c78-47ae-b4cc-dd277deeb9f3)
+![image](https://github.com/user-attachments/assets/1051b0d6-32dc-4834-aa0f-31ee9ce0955a)
+
 
 
 
